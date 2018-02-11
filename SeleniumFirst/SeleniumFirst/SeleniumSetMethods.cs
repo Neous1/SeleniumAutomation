@@ -12,44 +12,44 @@ namespace SeleniumFirst
     {
 
         //Enter Text
-        public static void EnterText(IWebDriver driver, string element, string value, string elementType)
+        public static void EnterText(string element, string value, string elementType)
         {
             if (elementType == "Id")
             {
-                driver.FindElement(By.Id(element)).SendKeys(value);
+                PropertiesCollection.Driver.FindElement(By.Id(element)).SendKeys(value);
             }
             if (elementType == "Name")
             {
-                driver.FindElement(By.Name(element)).SendKeys(value);
+                PropertiesCollection.Driver.FindElement(By.Name(element)).SendKeys(value);
             }
         }
         //Click into a button, checkbox, option etc
-        public static void Click(IWebDriver driver, string element, string elementType)
+        public static void Click(string element, string elementType)
         {
             if (elementType == "Id")
             {
-                driver.FindElement(By.Id(element)).Click();
+                PropertiesCollection.Driver.FindElement(By.Id(element)).Click();
             }
             if (elementType == "Name")
             {
-                driver.FindElement(By.Id(element)).Click();
+                PropertiesCollection.Driver.FindElement(By.Id(element)).Click();
             }
         }
 
 
         //Selecting a dropdown control
-        public static void SelectDropDown(IWebDriver driver, string element, string value, string elementType)
+        public static void SelectDropDown(string element, string value, string elementType)
         {
             if (elementType == "Id")
             {
                 //Pass the text clicked in the dropdown as a paramter for SelectElement
 
-               new SelectElement(driver.FindElement(By.Id(element))).SelectByText(value);
+               new SelectElement(PropertiesCollection.Driver.FindElement(By.Id(element))).SelectByText(value);
                 //this method is used because the selectDropDown method uses string as an element datatype instead of IWebElement.
             }
             if (elementType == "Name")
             {
-                new SelectElement(driver.FindElement(By.Name(element))).SelectByText(value);
+                new SelectElement(PropertiesCollection.Driver.FindElement(By.Name(element))).SelectByText(value);
             }
         }
     }

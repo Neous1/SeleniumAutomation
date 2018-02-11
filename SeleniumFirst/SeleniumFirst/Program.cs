@@ -11,10 +11,10 @@ namespace SeleniumFirst
 {
     class Program
     {
-
-
-        //create a reference for our browser
-        IWebDriver driver = new ChromeDriver();
+//
+//
+//        //create a reference for our browser
+//        IWebDriver driver = new ChromeDriver();
 
         static void Main(string[] args)
         {
@@ -25,8 +25,9 @@ namespace SeleniumFirst
         [SetUp]
         public void Initialize()
         {
+            PropertiesCollection.Driver = new ChromeDriver();
             // Navigate to web page
-            driver.Navigate().GoToUrl("http://executeautomation.com/demosite/index.html");
+            PropertiesCollection.Driver.Navigate().GoToUrl("http://executeautomation.com/demosite/index.html");
             Console.WriteLine("Opened URL");
         }
 
@@ -35,17 +36,17 @@ namespace SeleniumFirst
         public void ExecuteTest()
         {
             //Title
-            SeleniumSetMethods.SelectDropDown(driver, "TitleId","Mr.", "Id");
+            SeleniumSetMethods.SelectDropDown("TitleId","Ms.", "Id");
 
             //Initial
-            SeleniumSetMethods.EnterText(driver, "Initial","YJN" ,"Name");
+            SeleniumSetMethods.EnterText("Initial","EJN" ,"Name");
 
-            Console.WriteLine("The value from my Title is: " + SeleniumGetMethods.GetTextFromDDl(driver,"TitleId", "Id"));
+            Console.WriteLine("The value from my Title is: " + SeleniumGetMethods.GetTextFromDDl("TitleId", "Id"));
 
-            Console.WriteLine("The value from my Initial is: " + SeleniumGetMethods.GetText(driver,"Initial", "Name"));
+            Console.WriteLine("The value from my Initial is: " + SeleniumGetMethods.GetText("Initial", "Name"));
 
             //Click
-            SeleniumSetMethods.Click(driver,"Save", "name" );
+            SeleniumSetMethods.Click("Save", "name" );
         }
 
         [Test]
@@ -57,7 +58,7 @@ namespace SeleniumFirst
         [TearDown] // closes test
         public void CleanUp()
         {
-            //driver.Close();
+            PropertiesCollection.Driver.Close();
             Console.WriteLine("Closed the browser");
 
         }
