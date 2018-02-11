@@ -40,7 +40,7 @@ namespace SeleniumFirst
             //Initial
             SeleniumSetMethods.EnterText(driver, "Initial","YJN" ,"Name");
 
-            Console.WriteLine("The value from my Title is: " + SeleniumGetMethods.GetText(driver,"Titleid", "Id"));
+            Console.WriteLine("The value from my Title is: " + SeleniumGetMethods.GetTextFromDDl(driver,"TitleId", "Id"));
 
             Console.WriteLine("The value from my Initial is: " + SeleniumGetMethods.GetText(driver,"Initial", "Name"));
 
