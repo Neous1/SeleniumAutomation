@@ -34,16 +34,14 @@ namespace SeleniumFirst
         [Test] // needed to run the test
         public void ExecuteTest()
         {
+            //Title
+            SeleniumSetMethods.SelectDropDown(driver, "TitleId","Mr.", "Id");
 
-            //Enter(element targeted, value passed , type of DOM element)
+            //Initial
+            SeleniumSetMethods.EnterText(driver, "Initial","YJN" ,"Name");
 
-            //Select a page element to navigate to
-            IWebElement element = driver.FindElement(By.Name("q"));
-
-            //Perfom Operation
-            element.SendKeys("This is a test");
-
-            Console.WriteLine("Executed test");
+            //Click
+            SeleniumSetMethods.Click(driver,"Save", "name" );
         }
 
         [Test]
@@ -55,7 +53,7 @@ namespace SeleniumFirst
         [TearDown] // closes test
         public void CleanUp()
         {
-            driver.Close();
+            //driver.Close();
             Console.WriteLine("Closed the browser");
 
         }

@@ -20,7 +20,7 @@ namespace SeleniumFirst
             }
             if (elementType == "Name")
             {
-                driver.FindElement(By.Id(element)).SendKeys(value);
+                driver.FindElement(By.Name(element)).SendKeys(value);
             }
         }
         //Click into a button, checkbox, option etc
