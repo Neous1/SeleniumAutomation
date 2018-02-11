@@ -15,7 +15,6 @@ namespace SeleniumFirst
             //create a reference for our browser
             IWebDriver driver = new ChromeDriver();
 
-
             // Navigate to web page
             driver.Navigate().GoToUrl("https://www.google.com/");
 
@@ -24,6 +23,8 @@ namespace SeleniumFirst
 
             //Perfom Operation
             element.SendKeys("This is a test");
+
+            driver.Close();
         }
     }
 }
