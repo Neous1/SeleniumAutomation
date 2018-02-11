@@ -18,10 +18,7 @@ namespace SeleniumFirst
 
         static void Main(string[] args)
         {
-
             
-
-
         }
 
         //open brower
@@ -30,8 +27,7 @@ namespace SeleniumFirst
         {
             // Navigate to web page
             driver.Navigate().GoToUrl("https://www.google.com/");
-
-
+            Console.WriteLine("Opened URL");
         }
 
         //Execute the operation
@@ -44,14 +40,20 @@ namespace SeleniumFirst
             //Perfom Operation
             element.SendKeys("This is a test");
 
-
+            Console.WriteLine("Executed test");
         }
 
+        [Test]
+        public void NextTest()
+        {
+            Console.WriteLine("Next Test");
+        }
         //clean up
         [TearDown] // closes test
         public void CleanUp()
         {
             driver.Close();
+            Console.WriteLine("Closed the browser");
 
         }
     }
