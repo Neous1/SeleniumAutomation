@@ -26,7 +26,7 @@ namespace SeleniumFirst
         public void Initialize()
         {
             // Navigate to web page
-            driver.Navigate().GoToUrl("https://www.google.com/");
+            driver.Navigate().GoToUrl("http://executeautomation.com/demosite/index.html");
             Console.WriteLine("Opened URL");
         }
 
@@ -34,6 +34,9 @@ namespace SeleniumFirst
         [Test] // needed to run the test
         public void ExecuteTest()
         {
+
+            //Enter(element targeted, value passed , type of DOM element)
+
             //Select a page element to navigate to
             IWebElement element = driver.FindElement(By.Name("q"));
 
