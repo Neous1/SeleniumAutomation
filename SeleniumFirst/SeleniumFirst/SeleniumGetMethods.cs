@@ -12,34 +12,17 @@ namespace SeleniumFirst
     class SeleniumGetMethods
     {
         //get text from control
-        public static string GetText( string element, How elementType)
+        public static string GetText( IWebElement element)
         {
-            if (elementType == How.Id)
-            {//use the getAttribute to get the value becuase .text doesn't work to get the data 
-                return PropertiesCollection.Driver.FindElement(By.Id(element)).GetAttribute("value");
-            }
-            if (elementType == How.Name)
-            {
-                return PropertiesCollection.Driver.FindElement(By.Name(element)).GetAttribute("value");
-            }
-
-            else return String.Empty; // if no connection are met retun empty string.
+               return element.GetAttribute("value");
+          
         }
 
         // Create a different method for control who can't use 
-        public static string GetTextFromDDl(string element, How elementType)
+        public static string GetTextFromDDl(IWebElement element)
         {
-            if (elementType == How.Id)
-            {
-                //use the allSelectedOption because it allows the return of IWebElement datatype
-                return new SelectElement(PropertiesCollection.Driver.FindElement(By.Id(element))).AllSelectedOptions.SingleOrDefault().Text;
-            }
-            if (elementType == How.Name)
-            {
-                return new SelectElement(PropertiesCollection.Driver.FindElement(By.Name(element))).AllSelectedOptions.SingleOrDefault().Text;
-            }
-
-            else return String.Empty; // if no connection are met retun empty string.
+                return new SelectElement(element).AllSelectedOptions.SingleOrDefault().Text;
+            
         }
 
     }
