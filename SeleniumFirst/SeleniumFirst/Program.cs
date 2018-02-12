@@ -32,7 +32,9 @@ namespace SeleniumFirst
         [Test] // needed to run the test
         public void ExecuteTest()
         {
-            
+            //Login to Application and instantiate EAPageObject
+            LoginPageObject pageLogin = new LoginPageObject();
+            EAPageObjects pageEA =  pageLogin.Login("Yvon", "EA9817");
 
             //initialize the page by calling its reference
             EAPageObjects page  = new EAPageObjects();
