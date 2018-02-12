@@ -6,15 +6,12 @@ using System.Threading.Tasks;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Support.PageObjects;
 
 namespace SeleniumFirst
 {
     class Program
     {
-//
-//
-//        //create a reference for our browser
-//        IWebDriver driver = new ChromeDriver();
 
         static void Main(string[] args)
         {
@@ -36,17 +33,17 @@ namespace SeleniumFirst
         public void ExecuteTest()
         {
             //Title
-            SeleniumSetMethods.SelectDropDown("TitleId","Ms.", "Id");
+            SeleniumSetMethods.SelectDropDown("TitleId","Ms.", How.Id);
 
             //Initial
-            SeleniumSetMethods.EnterText("Initial","EJN" ,"Name");
+            SeleniumSetMethods.EnterText("Initial","EJN" ,How.Name);
 
-            Console.WriteLine("The value from my Title is: " + SeleniumGetMethods.GetTextFromDDl("TitleId", "Id"));
+            Console.WriteLine("The value from my Title is: " + SeleniumGetMethods.GetTextFromDDl("TitleId", How.Id));
 
-            Console.WriteLine("The value from my Initial is: " + SeleniumGetMethods.GetText("Initial", "Name"));
+            Console.WriteLine("The value from my Initial is: " + SeleniumGetMethods.GetText("Initial", How.Name));
 
             //Click
-            SeleniumSetMethods.Click("Save", "name" );
+           // SeleniumSetMethods.Click("Save", How.Name);
         }
 
         [Test]

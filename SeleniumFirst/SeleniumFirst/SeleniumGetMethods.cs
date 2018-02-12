@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.PageObjects;
 using OpenQA.Selenium.Support.UI;
 
 namespace SeleniumFirst
@@ -11,13 +12,13 @@ namespace SeleniumFirst
     class SeleniumGetMethods
     {
         //get text from control
-        public static string GetText( string element, string elementType)
+        public static string GetText( string element, How elementType)
         {
-            if (elementType == "Id")
+            if (elementType == How.Id)
             {//use the getAttribute to get the value becuase .text doesn't work to get the data 
                 return PropertiesCollection.Driver.FindElement(By.Id(element)).GetAttribute("value");
             }
-            if (elementType == "Name")
+            if (elementType == How.Name)
             {
                 return PropertiesCollection.Driver.FindElement(By.Name(element)).GetAttribute("value");
             }
@@ -26,14 +27,14 @@ namespace SeleniumFirst
         }
 
         // Create a different method for control who can't use 
-        public static string GetTextFromDDl(string element, string elementType)
+        public static string GetTextFromDDl(string element, How elementType)
         {
-            if (elementType == "Id")
+            if (elementType == How.Id)
             {
                 //use the allSelectedOption because it allows the return of IWebElement datatype
                 return new SelectElement(PropertiesCollection.Driver.FindElement(By.Id(element))).AllSelectedOptions.SingleOrDefault().Text;
             }
-            if (elementType == "Name")
+            if (elementType == How.Name)
             {
                 return new SelectElement(PropertiesCollection.Driver.FindElement(By.Name(element))).AllSelectedOptions.SingleOrDefault().Text;
             }

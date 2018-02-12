@@ -7,6 +7,15 @@ using OpenQA.Selenium;
 
 namespace SeleniumFirst
 {
+
+    enum PropertType
+    {
+        Id,
+        Name,
+        LinkText,
+        CssName,
+        ClassName
+    }
     class PropertiesCollection
     {
         //
