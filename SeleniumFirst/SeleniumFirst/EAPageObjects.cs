@@ -26,8 +26,13 @@ namespace SeleniumFirst
         //identify the textbox
         [FindsBy(How = How.Name, Using = "Initial")]
         public IWebElement txtInitial { get; set; }
-
-        //identify the button
+        
+        [FindsBy(How = How.Name, Using = "FirstName")]
+        public IWebElement txtFirstName { get; set; }
+        
+        [FindsBy(How = How.Name, Using = "MiddleName")]
+        public IWebElement txtMiddleName { get; set; }
+        
         [FindsBy(How = How.Name, Using = "Save")]
         public IWebElement btnSave { get; set; }
 
