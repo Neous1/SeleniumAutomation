@@ -43,7 +43,7 @@ namespace SeleniumFirst
             Console.WriteLine("The value from my Initial is: " + SeleniumGetMethods.GetText("Initial", How.Name));
 
             //Click
-           // SeleniumSetMethods.Click("Save", How.Name);
+            SeleniumSetMethods.Click("Save", How.Name);
         }
 
         [Test]
