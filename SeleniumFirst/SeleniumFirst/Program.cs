@@ -32,18 +32,25 @@ namespace SeleniumFirst
         [Test] // needed to run the test
         public void ExecuteTest()
         {
-            //Title
-            SeleniumSetMethods.SelectDropDown("TitleId","Ms.", How.Id);
+            //initialize the page by calling its reference
+            EAPageObjects page  = new EAPageObjects();
+            page.txtInitial.SendKeys("test for POM"); //= "test from POM"
 
-            //Initial
-            SeleniumSetMethods.EnterText("Initial","EJN" ,How.Name);
+            page.btnSave.Click();
 
-            Console.WriteLine("The value from my Title is: " + SeleniumGetMethods.GetTextFromDDl("TitleId", How.Id));
 
-            Console.WriteLine("The value from my Initial is: " + SeleniumGetMethods.GetText("Initial", How.Name));
+            ////Title
+            //SeleniumSetMethods.SelectDropDown("TitleId","Ms.", How.Id);
 
-            //Click
-            SeleniumSetMethods.Click("Save", How.Name);
+            ////Initial
+            //SeleniumSetMethods.EnterText("Initial","EJN" ,How.Name);
+
+            //Console.WriteLine("The value from my Title is: " + SeleniumGetMethods.GetTextFromDDl("TitleId", How.Id));
+
+            //Console.WriteLine("The value from my Initial is: " + SeleniumGetMethods.GetText("Initial", How.Name));
+
+            ////Click
+            //SeleniumSetMethods.Click("Save", How.Name);
         }
 
         [Test]
