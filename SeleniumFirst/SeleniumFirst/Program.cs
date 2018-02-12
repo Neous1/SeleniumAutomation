@@ -24,7 +24,8 @@ namespace SeleniumFirst
         {
             PropertiesCollection.Driver = new ChromeDriver();
             // Navigate to web page
-            PropertiesCollection.Driver.Navigate().GoToUrl("http://executeautomation.com/demosite/index.html");
+            PropertiesCollection.Driver.Navigate().GoToUrl("http://www.executeautomation.com/demosite/Login.html");
+            //PropertiesCollection.Driver.Navigate().GoToUrl("http://executeautomation.com/demosite/index.html");
             Console.WriteLine("Opened URL");
         }
 
@@ -36,11 +37,8 @@ namespace SeleniumFirst
             LoginPageObject pageLogin = new LoginPageObject();
             EAPageObjects pageEA =  pageLogin.Login("Yvon", "EA9817");
 
-            //initialize the page by calling its reference
-            EAPageObjects page  = new EAPageObjects();
-            page.txtInitial.SendKeys("test for POM"); //= "test from POM"
+            pageEA.FillUserForm("YJN", "Yvon-Joel", " ");
 
-            page.btnSave.Click();
 
 
             ////Title

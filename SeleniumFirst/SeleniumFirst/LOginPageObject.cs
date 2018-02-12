@@ -16,7 +16,7 @@ namespace SeleniumFirst
             PageFactory.InitElements(PropertiesCollection.Driver, this);
         }
 
-        [FindsBy(How = How.Name, Using = "Username")]
+        [FindsBy(How = How.Name, Using = "UserName")]
         public IWebElement txtUserName { get; set; }
 
         [FindsBy(How = How.Name, Using = "Password")]
