@@ -41,17 +41,13 @@ namespace SeleniumFirst
         public void FillUserForm(string inital, string firstName, string middleName)
         {
 
-            SeleniumSetMethods.EnterText(txtInitial,inital);
-            SeleniumSetMethods.EnterText(txtFirstName, firstName);
-            SeleniumSetMethods.EnterText(txtMiddleName, middleName);
-            SeleniumSetMethods.Click(btnSave);
+       
 
-
-            //txtInitial.SendKeys(inital);
-            //txtFirstName.SendKeys(firstName);
-            //txtMiddleName.SendKeys(middleName);
-
-            //btnSave.Submit();
+            //Extension methods of SeleniumSetMethods class extends its methods to the IWebElements
+            txtInitial.EnterText(inital);
+            txtFirstName.EnterText(firstName);
+            txtMiddleName.EnterText(middleName);
+            btnSave.Clicks();
         }
     }
 }

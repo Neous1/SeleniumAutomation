@@ -33,11 +33,14 @@ namespace SeleniumFirst
         [Test] // needed to run the test
         public void ExecuteTest()
         {
+            //open spreadsheet for test data
+            ExcelLib.PopulateInCollection(@"C:\Users\yvon\dev\SeleniumAutomation\Data.xlsx");
             //Login to Application and instantiate EAPageObject
             LoginPageObject pageLogin = new LoginPageObject();
-            EAPageObjects pageEA =  pageLogin.Login("Yvon", "EA9817");
+            //EAPageObjects pageEA =  pageLogin.Login("Yvon", "EA9817");
+            EAPageObjects pageEA =  pageLogin.Login(ExcelLib.ReadData(1,"UserName"), ExcelLib.ReadData(1,"Password"));
 
-            pageEA.FillUserForm("YJN", "Yvon-Joel", " ");
+            pageEA.FillUserForm(ExcelLib.ReadData(1, "Initial"), ExcelLib.ReadData(1, "MiddleName"), ExcelLib.ReadData(1, "FirstName"));
 
 
 
